@@ -1,0 +1,245 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at center, #1b1f3a, #0f101a);
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the body fills the entire viewport */
+}
+
+header {
+    background: linear-gradient(135deg, #1b1f3a, #2e3a59); /* Elegant gradient */
+    color: white;
+    padding: 48px 30px; /* Adds breathing space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: sticky; /* Sticks to the top */
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* Header Content Layout */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Centers the content */
+}
+
+/* Title Section */
+.title-section h1 {
+    font-size: 29px; /* Larger headline */
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.title-section p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #dcdcdc; /* Softer text */
+}
+
+/* Button Section */
+.button-section {
+    display: flex;
+    gap: 15px; /* Spacing between buttons */
+}
+
+/* Buttons Styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Login Button */
+.login-btn {
+    background-color: #ff7e5f;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+    background-color: #feb47b;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Signup Button */
+.signup-btn {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.signup-btn:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    background-color: #897d7d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.icon img {
+    width: 40%;
+    height: 40%;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    background-color: #FF5722;
+}
+
+.animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    z-index: -1;
+    animation: float 10s infinite alternate;
+}
+
+.sidebar {
+    background-color: #0e0e1d;
+    color: white;
+    width: fit-content;
+    height: 100%;
+    /* padding-top: 20px; */
+    width: fit-content;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensures text aligns well if there's an icon */
+    color: #ffffff; /* Modern white text */
+    padding: 12px 20px; /* Comfortable padding for better click area */
+    background: linear-gradient(135deg, #5c291d, #feb47b); /* Elegant gradient */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    font-weight: 500; /* Slightly bold for readability */
+    letter-spacing: 0.5px; /* Modern spacing */
+    border: none; /* Remove border for a cleaner look */
+    border-radius: 8px; /* Smooth rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 2px 0; /* Spacing between links */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.sidebar a:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    color: #ffffff; /* Keep text color consistent */
+}
+
+.sidebar a:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Slightly reduce shadow */
+}
+
+.sidebar a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+.content {
+    flex: 1;
+    /* margin-left: 150px; */
+    padding: 0;
+    /* border-left: 3px solid black; */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#bodyWrapper {
+    width: 100%;
+    flex-grow: 1; /* Fills remaining space */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}

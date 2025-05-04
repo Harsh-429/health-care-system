@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Plan</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #007bff;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: white;
+            margin: 8px 0;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #0056b3;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 30px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .profile-details {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-details ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .profile-details li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("name").innerText = localStorage.getItem("name");
+        })
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Healthcare System</h2>
+        <a href="/profile.html">Dashboard</a>
+        <a href="#">Medical Records</a>
+        <a href="/exercisePlan.html">Exercise Plan</a>
+        <a href="/dietPrefrences.html">Diet Preferences</a>
+        <a href="#">Activity Status</a>
+        <a href="/updateProfile.html">Settings</a>
+    </div>
+
+    <div class="content">
+        <div class="profile-header">
+            <img src="profile-pic.jpg" alt="Profile Picture" />
+            <div>
+                <h2 id="name">John Doe</h2>
+                <p id="exercise-summary">Loading your gains routine... 😤</p>
+            </div>
+        </div>
+
+        <div class="profile-details">
+            <h3>Daily Exercise Plan</h3>
+            <ul id="exercise-plan-list">
+                <li>Manifesting muscle magic...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const authToken = localStorage.getItem("authToken");
+
+            fetch('/user/getExercisePlan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${authToken}`
+                },
+                body: "{}"
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error('Failed to fetch exercise plan');
+                    return res.json();
+                })
+                .then(data => {
+                    console.log('Fetched exercise:', data);
+
+                    const summary = document.getElementById('exercise-summary');
+                    const list = document.getElementById('exercise-plan-list');
+                    list.innerHTML = '';
+
+                    if (data.status === 'success' && Array.isArray(data.workout_routine)) {
+                        data.workout_routine.forEach(workout => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<strong>${workout.activity}</strong> - 🔥 ${workout.calories} cal`;
+                            list.appendChild(li);
+                        });
+                        summary.textContent = "Workout plan loaded. Time to suffer beautifully 😈";
+                    } else {
+                        list.innerHTML = '<li>No workout plan found. Are you even trying, lazy bean? 💀</li>';
+                        summary.textContent = "Missing plan detected. Do I need to drag you to the gym myself? 🤨";
+                    }
+                })
+                .catch(err => {
+                    console.error('Error fetching workout:', err);
+                    document.getElementById('exercise-summary').textContent = 'Error fetching workout plan';
+                    document.getElementById('exercise-plan-list').innerHTML = '<li>Error loading data. This is why we can’t have nice biceps. 🙄</li>';
+                });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care System - Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 350px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .login-btn {
+            background: #ff5722;
+        }
+        .signup-btn {
+            background: #4caf50;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Health Care System</h1>
+        <p>Your one-stop platform for personalized health advice!</p>
+        <button class="btn login-btn" onclick="window.location.href='login.html'">Login</button>
+        <button class="btn signup-btn" onclick="window.location.href='signup.html'">Signup</button>
+    </div>
+
+    <script>
+        // Redirect to dashboard if already logged in
+        if (localStorage.getItem("loggedIn") === "true") {
+            window.location.href = "main.html";
+        }
+    </script>
+</body>
+</html>

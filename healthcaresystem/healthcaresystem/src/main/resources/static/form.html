@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Care System - Physical Fitness Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Health Care System</h2>
+        <h3>Physical Fitness & Wellness Form</h3>
+        
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="name">
+        </div>
+        
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="number" name="age">
+        </div>
+        
+        <div class="form-group">
+            <label>Sex:</label>
+            <input type="text" name="sex">
+        </div>
+        
+        <div class="form-group">
+            <label>Height (cm):</label>
+            <input type="number" name="height">
+        </div>
+        
+        <div class="form-group">
+            <label>Weight (kg):</label>
+            <input type="number" name="weight">
+        </div>
+        
+        <div class="form-group">
+            <label>BMI:</label>
+            <input type="text" name="bmi">
+        </div>
+        
+        <div class="form-group">
+            <label>Do you have any of the following conditions?</label>
+            <select name="disease">
+                <option value="none">None</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="hypertension">Hypertension</option>
+                <option value="asthma">Asthma</option>
+                <option value="heart_disease">Heart Disease</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Preferred Yoga Practices:</label>
+            <select name="yoga">
+                <option value="none">None</option>
+                <option value="meditation">Meditation</option>
+                <option value="hatha">Hatha Yoga</option>
+                <option value="vinyasa">Vinyasa Yoga</option>
+                <option value="ashtanga">Ashtanga Yoga</option>
+                <option value="kundalini">Kundalini Yoga</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Waist Circumference (in cm):</label>
+            <input type="number" name="waist_circumference">
+        </div>
+        
+        <div class="form-group">
+            <label>Resting Heart Rate:</label>
+            <input type="number" name="resting_heart_rate">
+        </div>
+        
+        <div class="form-group">
+            <label>Training Heart Rate:</label>
+            <input type="number" name="training_heart_rate">
+        </div>
+        
+        <div class="form-group">
+            <label>90 Degrees Push-Ups:</label>
+            <input type="number" name="push_ups">
+        </div>
+        
+        <div class="form-group">
+            <label>Partial Curl-Ups:</label>
+            <input type="number" name="curl_ups">
+        </div>
+        
+        <div class="form-group">
+            <label>Zipper Test (Overlap Score):</label>
+            <input type="number" name="zipper_test">
+        </div>
+        
+        <div class="form-group">
+            <label>Sit-and-Reach (cm):</label>
+            <input type="number" name="sit_reach">
+        </div>
+        
+        <button class="btn">Submit</button>
+    </div>
+</body>
+</html>
